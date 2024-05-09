@@ -1,0 +1,3 @@
+# Load modules(such as cuda cudnn nccl, if any), Activate Conda Env, ...
+module load cuda/12.2.2 nccl/12.2-2.18.3-1 cudnn/12-8.9.4.25
+conda activate gpu_dev

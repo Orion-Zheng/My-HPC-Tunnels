@@ -1,0 +1,15 @@
+echo "1. My Current Tasks "
+squeue | grep $(whoami)
+echo "2. Current Cluster Status"
+sinfo -S+P -o "%18P %8a %20F"
+echo "3. Current Queue Lengths"
+echo "a100-small queue: $(squeue | grep "gpu-a100-sm" | grep "PD" | wc -l)"
+echo "a100-dev queue: $(squeue | grep "gpu-a100-de" | grep "PD" | wc -l)"
+echo "a100 queue: $(squeue | grep "gpu-a100 " | grep "PD" | wc -l)"
+echo "h100 queue: $(squeue | grep "gpu-h100 " | grep "PD" | wc -l)"
+echo "development queue: $(squeue | grep "development" | grep "PD" | wc -l)"
+echo "vm-small queue: $(squeue | grep "vm-small" | grep "PD" | wc -l)"
+echo "normal queue: $(squeue | grep "normal" | grep "PD" | wc -l)"
+echo "large queue: $(squeue | grep "gpu-a100-sm" | grep "PD" | wc -l)"
+echo "4. Queue Limits"
+qlimits
