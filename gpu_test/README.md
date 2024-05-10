@@ -25,13 +25,16 @@ cd bin/x86_64/linux/release; ./p2pBandwidthLatencyTest
 For NSCC, MPI_HOME=OPENMPI_DIR (module load openmpi), NCCL_HOME=$NSCC_NCCL_DIR
 make MPI=1 MPI_HOME=$OPENMPI_DIR CUDA_HOME=$CUDA_HOME NCCL_HOME=$NSCC_NCCL_DIR
 Run on 8 GPUs (-g 8), scanning from 8 Bytes to 128MBytes:
+```
 ./build/all_reduce_perf -b 8 -e 128M -f 2 -g 2
-
 mpirun -np 2 ./build/all_reduce_perf -b 8 -e 128M -f 2 -g 2
+```
 
-For NUS SoC, 
-MPI_HOME=/usr/lib/x86_64-linux-gnu/openmpi
-But I didn't find NCCL 
-
+For NUS SoC Cluster, `MPI_HOME` can be find by `find /usr -name mpi.h` and `CUDA_HOME=/usr/local/cuda`. But I didn't find NCCL installation. Although NCCL library can be installed in the conda environment, but it doesn't work ...
+Although the NUS SoC Cluster doesn't have NCCL, we can still run multi-node, multi-gpu training in Pytorch by using the default `gloo` backend. Don't forget to specify an envronment variable `GLOO_SOCKET_IFNAME` in your script if you want to init_process_group with `gloo` backend.
+```
+# This varible can be obtained by run `ip addr` and select an available NIC that can reach other machines (ping -I <interface> <destination>)
+export GLOO_SOCKET_IFNAME="enp68s0f0"  
+```
 # Accelerate Test
 ```accelerate test```

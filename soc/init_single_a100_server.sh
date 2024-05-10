@@ -3,7 +3,7 @@
 #SBATCH -J launch_a100_server       # Job name
 #SBATCH -p long          # Queue (partition) name
 #SBATCH -N 1               # Total # of nodes (must be 1 for serial)
-#SBATCH -n 1               # Total # of mpi tasks (should be 1 for serial)
+#SBATCH --ntasks-per-node=1      # total number of tasks per node
 #SBATCH -t 48:00:00        # Run time (hh:mm:ss)
 #SBATCH --mem=100000MB     # min mem per node
 #SBATCH --gpus-per-node=a100-80:1
