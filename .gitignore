@@ -1,0 +1,11 @@
+# ignore all pbs/slurm jobs' output files / Executable file of vscode tunnel
+**/*.out  
+**/code
+# ignore vscode tunnel's vscode server directory
+**/*_gpu*/  
+# ignore vscode tunnel's vscode server directory
+**/*_cpu*/
+gpu_test/cuda-samples/
+gpu_test/nccl-tests/
+cloud_storage/rclone*/
+cloud_storage/*.zip
