@@ -5,5 +5,6 @@
 conda install -y pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia 
 conda install -y packaging transformers datasets click dm-tree protobuf toml rich aiosignal frozenlist jsonschema astunparse
 conda install -y -c conda-forge accelerate wandb peft sentencepiece deepspeed
-conda install -y -c nvidia cuda-compiler
+# conda install -y -c nvidia cuda-compiler  # can skip if nvcc is installed in CUDA dir
 pip install flash_attn bitsandbytes msgpack nest_asyncio pyarrow_hotfix gpustat
+pip install -U datasets
