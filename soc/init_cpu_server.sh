@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J launch_cpu_server       # Job name
+#SBATCH -J test_cpu_server       # Job name
 #SBATCH -p long          # Queue (partition) name
 #SBATCH -N 1               # Total # of nodes (must be 1 for serial)
 #SBATCH --ntasks-per-node=1      # total number of tasks per node
