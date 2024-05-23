@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #SBATCH -J test_h100_server       # Job name
 #SBATCH -p gpu-long          # Queue (partition) name
 #SBATCH -N 2               # Total # of nodes (must be 1 for serial)
@@ -7,9 +6,8 @@
 #SBATCH -t 48:00:00        # Run time (hh:mm:ss)
 #SBATCH --mem=784GB     # min mem per node
 #SBATCH --gpus-per-node=h100-96:2
-#SBATCH --mail-user=reflectionie@gmail.com
+#SBATCH --mail-user=zheng_zian@u.nus.edu
 #SBATCH --mail-type=all    # Send email at begin and end of job
-# source ~/.bashrc
-conda activate base
+source ~/.bashrc
 nvidia-smi
 python ../launch_tunnel.py --type soc_h100
