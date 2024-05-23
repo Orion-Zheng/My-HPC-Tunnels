@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J test_a100_server       # Job name
-#SBATCH -p long        # Queue (partition) name
+#SBATCH -p gpu-long        # Queue (partition) name
 #SBATCH -N 2               # Total # of nodes (must be 1 for serial)
 #SBATCH --ntasks-per-node=1      # total number of tasks per node
 #SBATCH -t 48:00:00        # Run time (hh:mm:ss)

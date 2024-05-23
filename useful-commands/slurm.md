@@ -18,3 +18,7 @@ sacctmgr list associations
 sreport cluster AccountUtilization
 sreport cluster AccountUtilizationByUser user=USER_NAME
 ```
+
+```
+srun --pty -p gpu-long -N 2 --ntasks-per-node=1 --mem=784GB --time=2:00:00 --gpus-per-node=h100-96:2 /bin/bash
+```
