@@ -1,0 +1,18 @@
+#!/bin/bash 
+# run in current working directory 
+#$ -cwd 
+#$ -o ~/
+#$ -j y
+#$ -l node_f=2
+# maximum run time 
+#$ -l h_rt=00:10:00 
+#$ -N serial
+#$ -M reflectionie@gmail.com
+#$ -m abe
+# load cuda module 
+module load cuda
+
+source ~/.bashrc
+RUNTIME_NAME="tsubame_2x4_H100"
+OUTPUT_PATH="${RUNTIME_NAME}_tunnel.out"
+python ../launch_tunnel.py --type $RUNTIME_NAME > $OUTPUT_PATH 2>&1
