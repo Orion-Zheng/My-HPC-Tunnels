@@ -8,3 +8,5 @@ conda install -y -c conda-forge accelerate wandb peft sentencepiece deepspeed
 # conda install -y -c nvidia cuda-compiler  # can skip if nvcc is installed in CUDA dir
 pip install flash_attn bitsandbytes msgpack nest_asyncio pyarrow_hotfix gpustat pexpect
 pip install -U datasets
+
+# install `jq` and `yq` to parse json and yaml files
