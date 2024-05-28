@@ -9,3 +9,5 @@ gpu_test/cuda-samples/
 gpu_test/nccl-tests/
 cloud_storage/rclone*/
 cloud_storage/*.zip
+
+!mig_gpu_ddp_example/
