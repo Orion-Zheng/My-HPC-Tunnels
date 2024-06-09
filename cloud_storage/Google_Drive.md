@@ -68,7 +68,9 @@ rclone mount my_gdrive: ~/gdrive_backup # mount google drive to local dir
 You can use either `rclone copy` or `rclone sync` commands to upload files manually. Here we take `rclone copy` as an example. Compare to `rclone copy`, `rclone sync` may also delete some files in the remote drive, so please use with caution.
 
 ```
-rclone copy -P  ./experiment_ckpts my_gdrive:research_backup
+rclone copy -P  ./experiment_ckpts my_gdrive:research_backup/experiment_ckpts
+rclone copy -P  ./original_models my_gdrive:research_backup/original_models
+rclone copy -P  ./tokenized_datasets my_gdrive:research_backup/tokenized_datasets
 ```
 
 # Reference
