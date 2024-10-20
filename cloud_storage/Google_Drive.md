@@ -14,7 +14,7 @@ rclone --version
 ```
 
 # 2. Configure the `rclone`
-## 2.1 Set up OAuth on Google Cloud
+## 2.1 Set up OAuth on Google Cloud(Optional)
 Follow the document: https://rclone.org/drive/#making-your-own-client-id
 ## 2.2 Set up connection to your Google Drive
 ```
